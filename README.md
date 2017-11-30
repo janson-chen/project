@@ -1,1 +1,1 @@
-# project
+# angular skeleton
