@@ -1,0 +1,22 @@
+{
+  "name": "server-data",
+  "version": "1.0.0",
+  "description": "mok",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node app.js"
+  },
+  "author": "chenhao",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-http-proxy": "^0.10.1"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "http-proxy": "^1.16.2",
+    "http-proxy-middleware": "^0.17.3",
+    "log4js": "^1.0.1"
+  }
+}

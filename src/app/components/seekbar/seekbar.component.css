@@ -1,0 +1,19 @@
+
+h1 {
+  background: #eeedeb;
+}
+
+.seekbar {
+    position:relative;
+}
+
+.seekbar svg {
+    overflow: visible;
+}
+
+.dot {
+    position: absolute;
+    top: 0;
+    transform: translateY(8px);
+}
+
