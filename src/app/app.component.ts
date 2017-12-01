@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
     public ngOnInit() {
         console.log("Initial App State", this.appState.state);
         console.log(
-            "Initial App StateInitial App  StateIni tial App StateInitial App StateInitial App StateInitial App StateInitial App StateInitial App StateInitial App State",
+            "Initial App StateInitial App  Stat eIni tial App StateIni tial App StateInitial App StateInitial App StateInitial App StateInitial App StateInitial App State",
             this.appState.state
         );
     }
