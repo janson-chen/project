@@ -1,0 +1,3 @@
+yarn.lock -diff
+node_modules diff=nodiff
+.history diff=nodiff
