@@ -18,11 +18,12 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/*", function (req, res, next) {
-    console.log("[catch get action]:" + req.url);
+    console.log("[catch get action]:" + req.query['callback']);
+    const callback = req.query['callback'];
     try {
 
-        const resData = fs.readFileSync(path.normalize(DATA_PUBLIC_PATH + '/' + req.url + '.json'));
-        res.end(resData);
+        const resData = fs.readFileSync(path.normalize(DATA_PUBLIC_PATH + '/' + req.url.substring(0, req.url.indexOf("?")) + '.json'));
+        res.end(callback + '(' + resData + ')');
 
     } catch (error) {
 

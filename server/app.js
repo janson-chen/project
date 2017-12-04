@@ -51,7 +51,7 @@ app.all('*', function(req, res, next) {
 
 //mok
 app.use('/' , router);
-//app.use('/static' , express.static(path.resolve(__dirname  ,  '../static')));
+app.use('/static' , express.static(path.resolve(__dirname  ,  '../static')));
 
 //监听端口
 app.listen(80);
