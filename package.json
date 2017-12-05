@@ -81,6 +81,20 @@
       "webpack-dev-server": "node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js",
       "webpack": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js"
     },
+    "lint-staged": {
+        "src/**/*.ts": [
+          "prettier --write",
+          "git add"
+        ],
+        "src/assets/**/*.json": [
+          "prettier --write",
+          "git add"
+        ],
+        "src/**/*.scss": [
+          "prettier --write",
+          "git add"
+        ]
+      },
     "dependencies": {
       "@angular/animations": "~5.0.1",
       "@angular/common": "~5.0.1",
