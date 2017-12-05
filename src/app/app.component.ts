@@ -1,18 +1,21 @@
 /**
  * Angular 2 decorators and services
  */
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { AppState } from "./app.service";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { environment } from 'environments/environment';
+import { AppState } from './app.service';
 
 /**
  * App Component
  * Top Level Component
  */
 @Component({
-    selector: "app",
-    encapsulation: ViewEncapsulation.None,
-    styleUrls: ["./app.component.css"],
-    template: `
+  selector: 'app-root',
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: [
+    './app.component.css'
+  ],
+  template: `
     <nav>
       <a [routerLink]=" ['./'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
@@ -34,29 +37,43 @@ import { AppState } from "./app.service";
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         About
       </a>
+      <a *ngIf="showDevModule" [routerLink]=" ['./dev-module'] "
+         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+        DevModule
+      </a>
     </nav>
 
     <main>
       <router-outlet></router-outlet>
     </main>
+
+    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
+
+    <footer>
+      <span>Angular Starter by <a [href]="twitter">@gdi2290</a></span>
+      <div>
+        <a [href]="url">
+          <img [src]="tipe" width="25%">
+        </a>
+      </div>
+    </footer>
   `
 })
 export class AppComponent implements OnInit {
-    public angularclassLogo = "assets/img/angularclass-avatar.png";
-    public name = "Angular 2 Webpack Starter";
-    public url = "https://twitter.com/AngularClass";
+  public name = 'Angular Starter';
+  public tipe = 'assets/img/tipe.png';
+  public twitter = 'https://twitter.com/gdi2290';
+  public url = 'https://tipe.io';
+  public showDevModule: boolean = environment.showDevModule;
 
-    constructor(public appState: AppState) {}
+  constructor(
+    public appState: AppState
+  ) {}
 
-    public ngOnInit() {
-        console.log("Initial App State", this.appState.state);
-        console.log(
-            "Initial App StateInitial  App  Stat eIni tial App StateIni ",
-            "tial App StateInitial App StateInitial App ",
-            "StateInitial App StateInitial App StateInitial App State",
-            this.appState.state
-        );
-    }
+  public ngOnInit() {
+    console.log('Initial App State', this.appState.state);
+  }
+
 }
 
 /**

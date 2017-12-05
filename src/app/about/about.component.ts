@@ -16,7 +16,7 @@ import { ActivatedRoute } from '@angular/router';
     </div>
     <div>
       <h3>
-        patrick@AngularClass.com
+        patrick@tipe.io
       </h3>
     </div>
     <pre>this.localState = {{ localState | json }}</pre>
@@ -55,7 +55,7 @@ export class AboutComponent implements OnInit {
      * remember that 'es6-promise-loader' is a promise
      */
     setTimeout(() => {
-      console.log(System);
+
       System.import('../../assets/mock-data/mock-data.json')
         .then((json) => {
           console.log('async mockData', json);
